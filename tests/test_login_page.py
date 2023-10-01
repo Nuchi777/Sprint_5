@@ -1,17 +1,13 @@
 import time
-import pytest
-from selenium import webdriver
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
+from pages.base_bage import BasePage
 
 
-def test():
-    driver = webdriver.Chrome()
-    driver.get('https://stellarburgers.nomoreparties.site/')
-    time.sleep(3)
-    driver.quit()
+def test(driver):
+    page = BasePage(driver, 'https://www.google.com/')
+    page.open()
+    time.sleep(2)
+
 
 # def test_login_page():
 #     driver = webdriver.Chrome()
