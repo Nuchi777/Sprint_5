@@ -6,7 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 class TestStellarBurgersLogin:
     def test_login_button_login_to_account_main_page(self, driver, login):
         text = WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable((By.XPATH, "//h1[text()='Соберите бургер']"))).text
+            EC.visibility_of_element_located((By.XPATH, "//h1[text()='Соберите бургер']"))).text
         assert text == "Соберите бургер"
 
     def test_login_button_personal_account_main_page(self, driver):
@@ -15,7 +15,7 @@ class TestStellarBurgersLogin:
         driver.find_element(By.XPATH, "//input[@name='Пароль']").send_keys('230315')
         driver.find_element(By.XPATH, "//button[text()='Войти']").click()
         text = WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable((By.XPATH, "//h1[text()='Соберите бургер']"))).text
+            EC.visibility_of_element_located((By.XPATH, "//h1[text()='Соберите бургер']"))).text
         assert text == "Соберите бургер"
 
     def test_login_button_registration_form(self, driver):
@@ -26,7 +26,7 @@ class TestStellarBurgersLogin:
         driver.find_element(By.XPATH, "//input[@name='Пароль']").send_keys('230315')
         driver.find_element(By.XPATH, "//button[text()='Войти']").click()
         text = WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable((By.XPATH, "//h1[text()='Соберите бургер']"))).text
+            EC.visibility_of_element_located((By.XPATH, "//h1[text()='Соберите бургер']"))).text
         assert text == "Соберите бургер"
 
     def test_login_button_password_recovery_form(self, driver):
@@ -38,5 +38,5 @@ class TestStellarBurgersLogin:
         driver.find_element(By.XPATH, "//input[@name='Пароль']").send_keys('230315')
         driver.find_element(By.XPATH, "//button[text()='Войти']").click()
         text = WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable((By.XPATH, "//h1[text()='Соберите бургер']"))).text
+            EC.visibility_of_element_located((By.XPATH, "//h1[text()='Соберите бургер']"))).text
         assert text == "Соберите бургер"
