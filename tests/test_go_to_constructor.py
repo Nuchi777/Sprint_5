@@ -11,6 +11,7 @@ class TestStellarBurgersAccount:
         driver.find_element(By.XPATH, "//input[@name='Пароль']").send_keys('230315')
         driver.find_element(By.XPATH, "//button[text()='Войти']").click()
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.LINK_TEXT, "Личный Кабинет"))).click()
+        driver.find_element(By.XPATH, "//p[text()='Конструктор']").click()
         text = WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable((By.XPATH, "//button[text()='Выход']"))).text
-        assert text == "Выход"
+            EC.element_to_be_clickable((By.XPATH, "//h1[text()='Соберите бургер']"))).text
+        assert text == "Соберите бургер"
