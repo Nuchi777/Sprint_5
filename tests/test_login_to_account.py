@@ -4,12 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class TestStellarBurgersLogin:
-    def test_login_button_login_to_account_main_page(self, driver):
-        WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable((By.XPATH, "//button[text()='Войти в аккаунт']"))).click()
-        driver.find_element(By.XPATH, "//input[@name='name']").send_keys('evgenykoloskov1777@yandex.ru')
-        driver.find_element(By.XPATH, "//input[@name='Пароль']").send_keys('230315')
-        driver.find_element(By.XPATH, "//button[text()='Войти']").click()
+    def test_login_button_login_to_account_main_page(self, driver, login):
         text = WebDriverWait(driver, 3).until(
             EC.element_to_be_clickable((By.XPATH, "//h1[text()='Соберите бургер']"))).text
         assert text == "Соберите бургер"
