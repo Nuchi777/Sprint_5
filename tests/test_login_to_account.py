@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from locators import Locators
 
 
 class TestStellarBurgersLogin:
@@ -10,33 +11,33 @@ class TestStellarBurgersLogin:
         assert text == "Соберите бургер"
 
     def test_login_button_personal_account_main_page(self, driver):
-        WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.LINK_TEXT, "Личный Кабинет"))).click()
-        driver.find_element(By.XPATH, "//input[@name='name']").send_keys('evgenykoloskov1777@yandex.ru')
-        driver.find_element(By.XPATH, "//input[@name='Пароль']").send_keys('230315')
-        driver.find_element(By.XPATH, "//button[text()='Войти']").click()
+        WebDriverWait(driver, 3).until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()
+        driver.find_element(*Locators.EMAIL).send_keys('evgenykoloskov1777@yandex.ru')
+        driver.find_element(*Locators.PASSWORD).send_keys('230315')
+        driver.find_element(*Locators.BUTTON_LOGIN).click()
         text = WebDriverWait(driver, 3).until(
             EC.visibility_of_element_located((By.XPATH, "//h1[text()='Соберите бургер']"))).text
         assert text == "Соберите бургер"
 
     def test_login_button_registration_form(self, driver):
-        WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.LINK_TEXT, "Личный Кабинет"))).click()
-        driver.find_element(By.LINK_TEXT, "Зарегистрироваться").click()
-        driver.find_element(By.LINK_TEXT, "Войти").click()
-        driver.find_element(By.XPATH, "//input[@name='name']").send_keys('evgenykoloskov1777@yandex.ru')
-        driver.find_element(By.XPATH, "//input[@name='Пароль']").send_keys('230315')
-        driver.find_element(By.XPATH, "//button[text()='Войти']").click()
+        WebDriverWait(driver, 3).until(EC.element_to_be_clickable(Locators.BUTTON_PERSONAL_ACCOUNT)).click()
+        driver.find_element(*Locators.TEXT_BUTTON_REG_ACCOUNT).click()
+        driver.find_element(*Locators.TEXT_BUTTON_LOGIN).click()
+        driver.find_element(*Locators.EMAIL).send_keys('evgenykoloskov1777@yandex.ru')
+        driver.find_element(*Locators.PASSWORD).send_keys('230315')
+        driver.find_element(*Locators.BUTTON_LOGIN).click()
         text = WebDriverWait(driver, 3).until(
             EC.visibility_of_element_located((By.XPATH, "//h1[text()='Соберите бургер']"))).text
         assert text == "Соберите бургер"
 
     def test_login_button_password_recovery_form(self, driver):
         WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable((By.XPATH, "//button[text()='Войти в аккаунт']"))).click()
-        driver.find_element(By.LINK_TEXT, "Восстановить пароль").click()
-        driver.find_element(By.LINK_TEXT, "Войти").click()
-        driver.find_element(By.XPATH, "//input[@name='name']").send_keys('evgenykoloskov1777@yandex.ru')
-        driver.find_element(By.XPATH, "//input[@name='Пароль']").send_keys('230315')
-        driver.find_element(By.XPATH, "//button[text()='Войти']").click()
+            EC.element_to_be_clickable(Locators.BUTTON_ACCOUNT)).click()
+        driver.find_element(*Locators.TEXT_BUTTON_RECOVERY_PASSWORD).click()
+        driver.find_element(*Locators.TEXT_BUTTON_LOGIN).click()
+        driver.find_element(*Locators.EMAIL).send_keys('evgenykoloskov1777@yandex.ru')
+        driver.find_element(*Locators.PASSWORD).send_keys('230315')
+        driver.find_element(*Locators.BUTTON_LOGIN).click()
         text = WebDriverWait(driver, 3).until(
             EC.visibility_of_element_located((By.XPATH, "//h1[text()='Соберите бургер']"))).text
         assert text == "Соберите бургер"

@@ -26,3 +26,4 @@ def login(driver):
     driver.find_element(By.XPATH, "//input[@name='name']").send_keys('evgenykoloskov1777@yandex.ru')
     driver.find_element(By.XPATH, "//input[@name='Пароль']").send_keys('230315')
     driver.find_element(By.XPATH, "//button[text()='Войти']").click()
+
