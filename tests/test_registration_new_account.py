@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from locators import Locators
 from random import randint
 from faker import Faker
+from locators import Locators
 
 fake = Faker()
 
