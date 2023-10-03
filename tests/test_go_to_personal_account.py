@@ -1,7 +1,7 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from locators import Locators
+
 
 class TestStellarBurgersAccount:
     def test_go_to_personal_account_login_user(self, driver, login):
