@@ -7,16 +7,13 @@ class TestStellarBurgersConstructor:
     def test_constructor_go_to_buns(self, driver):
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable(ConstrPageLocators.BUTTON_CONSTRUCTOR_SAUCES)).click()
         driver.find_element(*ConstrPageLocators.BUTTON_CONSTRUCTOR_BUNS).click()
-        text = WebDriverWait(driver, 3).until(EC.visibility_of_element_located(ConstrPageLocators.BUTTON_CONSTRUCTOR_BUNS)).text
-        assert text == "Булки"
+        assert driver.find_element(*ConstrPageLocators.BUTTON_CONSTRUCTOR_ACTIVE).text == 'Булки'
 
     def test_constructor_go_to_sauces(self, driver):
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable(ConstrPageLocators.BUTTON_CONSTRUCTOR_SAUCES)).click()
-        text = WebDriverWait(driver, 3).until(EC.visibility_of_element_located(ConstrPageLocators.BUTTON_CONSTRUCTOR_SAUCES)).text
-        assert text == "Соусы"
+        assert driver.find_element(*ConstrPageLocators.BUTTON_CONSTRUCTOR_ACTIVE).text == 'Соусы'
 
     def test_constructor_go_to_filling(self, driver):
-        WebDriverWait(driver, 3).until(EC.element_to_be_clickable(ConstrPageLocators.BUTTON_CONSTRUCTOR_FILLING)).click()
-        text = WebDriverWait(driver, 3).until(
-            EC.visibility_of_element_located(ConstrPageLocators.BUTTON_CONSTRUCTOR_FILLING)).text
-        assert text == "Начинки"
+        WebDriverWait(driver, 3).until(
+            EC.element_to_be_clickable(ConstrPageLocators.BUTTON_CONSTRUCTOR_FILLING)).click()
+        assert driver.find_element(*ConstrPageLocators.BUTTON_CONSTRUCTOR_ACTIVE).text == 'Начинки'

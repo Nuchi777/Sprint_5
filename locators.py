@@ -37,3 +37,4 @@ class ConstrPageLocators:
     BUTTON_CONSTRUCTOR_BUNS = (By.XPATH, "//span[text()='Булки']")  # раздел "Булки" в конструкторе
     BUTTON_CONSTRUCTOR_SAUCES = (By.XPATH, "//span[text()='Соусы']")  # раздел "Соусы" в конструкторе
     BUTTON_CONSTRUCTOR_FILLING = (By.XPATH, "//span[text()='Начинки']")  # раздел "Начинки" в конструкторе
+    BUTTON_CONSTRUCTOR_ACTIVE = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current')]")  # активная кнопка в конструкторе

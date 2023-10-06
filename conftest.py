@@ -27,3 +27,4 @@ def login(driver):
     driver.find_element(*AuthPageLocators.EMAIL).send_keys(PersonStellarBurgers.EMAIL)
     driver.find_element(*AuthPageLocators.PASSWORD).send_keys(PersonStellarBurgers.PASSWORD)
     driver.find_element(*AuthPageLocators.BUTTON_LOGIN).click()
+    return driver
