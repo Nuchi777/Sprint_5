@@ -30,5 +30,5 @@ class TestStellarBurgersRegistration:
         driver.find_element(*RegPageLocators.CREATED_PASSWORD).send_keys(randint(10000, 99999))
         driver.find_element(*RegPageLocators.BUTTON_REG_ACCOUNT).click()
         text = WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "p.input__error.text_type_main-default"))).text
+            EC.element_to_be_clickable(RegPageLocators.ERROR_INCORRECT_PASSWORD)).text
         assert text == "Некорректный пароль"

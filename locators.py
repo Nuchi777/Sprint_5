@@ -30,6 +30,7 @@ class RegPageLocators:
     CREATED_EMAIL = (By.XPATH, "(//input[@name='name'])[2]")  # поле ввода "Email" для регистрации
     CREATED_PASSWORD = (By.XPATH, "//input[@name='Пароль']")  # поле ввода "Пароль" для регистрации
     BUTTON_REG_ACCOUNT = (By.XPATH, "//button[text()='Зарегистрироваться']")  # кнопка "Зарегистрироваться"
+    ERROR_INCORRECT_PASSWORD = (By.CSS_SELECTOR, "p.input__error.text_type_main-default") # ошибка "Некорректный пароль"
 
 
 class ConstrPageLocators:
@@ -38,3 +39,4 @@ class ConstrPageLocators:
     BUTTON_CONSTRUCTOR_SAUCES = (By.XPATH, "//span[text()='Соусы']")  # раздел "Соусы" в конструкторе
     BUTTON_CONSTRUCTOR_FILLING = (By.XPATH, "//span[text()='Начинки']")  # раздел "Начинки" в конструкторе
     BUTTON_CONSTRUCTOR_ACTIVE = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current')]")  # активная кнопка в конструкторе
+    TITLE_ASSEMBLE_BURGER = (By.XPATH, "//h1[text()='Соберите бургер']") # заголовок "Собери бургер"

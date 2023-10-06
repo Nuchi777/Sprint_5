@@ -3,7 +3,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from locators import MainPageLocators
 from locators import AccountPageLocators
 from locators import AuthPageLocators
-import time
 
 
 class TestStellarBurgersLogout:
