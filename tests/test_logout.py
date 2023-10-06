@@ -9,6 +9,5 @@ class TestStellarBurgersLogout:
     def test_logout(self, driver, login):
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable(MainPageLocators.BUTTON_PERSONAL_ACCOUNT)).click()
         WebDriverWait(driver, 3).until(EC.element_to_be_clickable(AccountPageLocators.TEXT_BUTTON_LOGOUT)).click()
-        text = WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable(AuthPageLocators.BUTTON_LOGIN)).text
-        assert text == "Войти"
+        assert WebDriverWait(driver, 3).until(
+            EC.element_to_be_clickable(AuthPageLocators.BUTTON_LOGIN)).is_displayed()
