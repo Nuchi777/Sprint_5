@@ -1,4 +1,11 @@
 # StellarBurgers
+## Это космический фастфуд: можно собрать и заказать бургер из необычных ингредиентов.
+
+### Bспользованные библиотеки и зависимости:
+pytest~=7.4.2
+selenium~=4.13.0
+webdriver-manager~=4.0.1
+Faker~=19.6.2
 
 ### Регистрация:
 * test_registration_new_account_valid_password
