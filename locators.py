@@ -26,10 +26,10 @@ class AccountPageLocators:
 class RegPageLocators:
     # форма регистрации
     TEXT_BUTTON_LOGIN = (By.LINK_TEXT, "Войти")  # текст-кнопка "Войти"
-    CREATED_NAME = (By.XPATH, "//fieldset[1]/div/div/input")  # поле ввода "Имя" для регистрации
-    CREATED_EMAIL = (By.XPATH, "//fieldset[2]/div/div/input")  # поле ввода "Email" для регистрации
-    CREATED_PASSWORD = (By.XPATH, "//fieldset[3]/div/div/input")  # поле ввода "Пароль" для регистрации
-    BUTTON_REG_ACCOUNT = (By.XPATH, "//form/button")  # кнопка "Зарегистрироваться"
+    CREATED_NAME = (By.XPATH, "(//input[@name='name'])[1]")  # поле ввода "Имя" для регистрации
+    CREATED_EMAIL = (By.XPATH, "(//input[@name='name'])[2]")  # поле ввода "Email" для регистрации
+    CREATED_PASSWORD = (By.XPATH, "//input[@name='Пароль']")  # поле ввода "Пароль" для регистрации
+    BUTTON_REG_ACCOUNT = (By.XPATH, "//button[text()='Зарегистрироваться']")  # кнопка "Зарегистрироваться"
 
 
 class ConstrPageLocators:
